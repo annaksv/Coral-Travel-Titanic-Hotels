@@ -1,0 +1,41 @@
+@use "../../common/css/mixins.scss";
+@use "../../common/css/variables.scss";
+
+section {
+    background-color: #F3F9FF;
+}
+
+.contenu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--margin_Base);
+    align-self: stretch;
+}
+
+.headline {
+    color: var(--color_Text_Dark);
+    font-family: Manrope;
+    font-size: var(--font_Size_Heading_1);
+    font-style: normal;
+    font-weight: var(--font_Weight_Semibold);
+    line-height: var(--font_Line_Height_Heading_1);
+}
+
+.text {
+     color: var(--color_Text_Dark);
+    font-family: Manrope;
+    font-size: var(--font_Size_Body);
+    font-style: normal;
+    font-weight: var(--font_Weight_Regular);
+    line-height: var(--font_Line_Height_Body);
+}
+
+@media (min-width: 428px)  {
+    .headline {
+        font-size: var(--font_Size_Heading_1);
+        font-style: normal;
+        font-weight: var(--font_Weight_Semibold);
+        line-height: var(--font_Line_Height_Heading_1); 
+    }
+}

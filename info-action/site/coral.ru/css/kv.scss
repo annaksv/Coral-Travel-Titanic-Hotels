@@ -1,0 +1,122 @@
+@use "../../common/css/mixins";
+
+section.kv > article .contenu .kv-main-banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--ratio-428);
+  border-radius: var(--border_Radius_MD);
+  overflow: hidden;
+
+  @include mixins.kv-aspect-ratio;
+
+  .content {
+    position: absolute;
+    margin-inline: auto;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    padding: var(--padding_LG);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    z-index: 3;
+    color: var(--color_Text_Light);
+
+    > *:not(.prime-btn, .content__location) {
+      margin-bottom: 12px;
+    }
+
+    @include mixins.respond-up(md) {
+      padding: var(--padding_XL);
+      justify-content: center;
+    }
+
+    @include mixins.respond-up(lg) {
+      padding: var(--padding_XXXXL);
+    }
+
+    .prime-btn {
+      margin-top: 20px;
+    }
+  }
+
+  .content__headline,
+  .content__text {
+    color: var(--color_Text_Light);
+  }
+
+  .content__headline {
+    color: var(--Text-color_Text_Light, #FFF);
+    width: 100%;
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--padding-padding_SM, 12px);
+    align-self: stretch;
+  }
+
+  .content__text {
+    color: var(--Text-color_Text_Light, #FFF);
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+
+    @include mixins.respond-up(2xl) {
+      font-size: var(--font_Size_KV_Subline_L);
+    }
+  }
+
+  .content__placeholder {
+    font-size: var(--font_Size_KV_Placeholder_M);
+    @include mixins.respond-up(2xl) {
+      font-size: var(--font_Size_KV_Placeholder_L);
+    }
+  }
+
+  .content__location {
+    position: absolute;
+    bottom: var(--padding_LG);
+    left: var(--padding_LG);
+    padding: 4px 8px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.80);
+    color: var(--color_Text_Dark);
+    display: flex;
+    gap: 10px;
+    margin: 0;
+
+    @include mixins.respond-up(md) {
+      right: var(--padding_Base);
+      left: unset;
+      bottom: var(--padding_Base);
+    }
+  }
+  
+  picture {
+    position: relative;
+    object-fit: cover;
+  }
+}
+ 
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  section.kv > article .contenu .kv-main-banner {
+    .content {
+      width: 40%;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  section.kv > article .contenu .kv-main-banner {
+    .content {
+      width: 40%;
+    }
+  }
+}

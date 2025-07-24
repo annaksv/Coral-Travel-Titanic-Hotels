@@ -1,0 +1,174 @@
+@use "../../common/css/mixins.scss";
+@use "../../common/css/variables.scss";
+
+.hotels {
+    background-color: var(--color_Base_Light_Alt);
+    justify-content: center;
+
+    &__container {
+        display: flex;
+        width: 100%;
+        align-items: flex-start;
+        gap: var(--padding_LG);
+        @include mixins.flex-grid(4, 24px, start);
+    }
+}
+
+.lead_text {
+    align-self: stretch;
+    width: 100%;
+    height: auto;
+    color: var(--color_Text_Dark);
+    font-family: Manrope;
+    font-size: var(--font_Size_Heading_1);
+    font-style: normal;
+    font-weight: var(--font_Weight_Semibold);
+    line-height: var(--font_Line_Height_Heading_1); 
+}
+
+.card_hotel {
+    position: relative;
+    height: 100%;
+    border-radius: var(--border_Radius_MD);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
+    background-color: #FFFFFF;
+    
+    .image {
+        position: static;
+        width: 100%;
+        height: 186px;
+        align-self: stretch;
+        object-fit: fill;
+        bottom: 0;
+        right: 0;
+        background-position: center;
+        border-radius: 20px 20px 0px 0px;
+        overflow: hidden;
+    }
+
+    .inner {
+        display: flex;
+        height: 304px;
+        padding: var(--padding_LG) var(--padding_XL) var(--padding_XL) var(--padding_XL);
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        align-self: stretch;
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--paddingXS,);
+            align-self: stretch;
+    
+            .title, .description {
+                margin-top: 0;
+                margin-bottom: 0;
+                align-self: stretch;
+                color: var(--color_Text_Dark,);
+                font-family: Manrope;
+                font-style: normal;
+            }
+    
+            .title {
+                font-size: var(--font_Size_Heading_5);
+                font-weight: var(--font_Weight_Semibold);
+            }
+    
+            .description {
+                font-size: var(--font_Size_Body);
+                font-weight: var(--font_Weight_Regular);
+            
+            }
+        }
+
+        .prime-btn {
+            cursor: pointer;
+            border: none;
+            display: flex;
+            height: 48px;
+            padding: 12px 20px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+            border-radius: 48px;
+            background: var(--color_Btn_Bg_Default);
+            color: var(--color_Btn_Text_Light);
+            font-family: Manrope;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 20px;  
+        }
+    }
+}
+
+@media (max-width: 1439.98px) {
+    .card_hotel {
+        .inner {
+            padding: var(--padding_Base) var(--padding_LG) var(--padding_LG) var(--padding_LG);
+        }    
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1439.98px) {
+    .hotels__container {
+        .card_hotel {
+            .image {
+                height: 148px;
+            }
+            .inner {
+                height: 312px;
+            }
+        }
+    }
+}
+  
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .hotels__container {
+        @include mixins.flex-grid(2, 32px, start);
+        .card_hotel {
+            .image {
+                height: 240px;
+            }
+            .inner {
+                height: 236px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+    .hotels__container {
+        @include mixins.flex-grid(2, 16px, start);  
+        .card_hotel {
+            .image {
+                height: 169px;
+            }
+            .inner {
+                height: 296px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hotels__container {
+        @include mixins.flex-grid(1, 16px, start);
+        .card_hotel{
+            .image {
+                height: 226px;;
+            }
+            .inner {
+                height: auto;
+                gap: 1rem;
+            }
+        }
+    }
+}
