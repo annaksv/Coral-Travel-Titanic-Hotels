@@ -152,12 +152,15 @@
   .benefits__container {
     display: flex;
   }
+
   .card {
     height: 232px;
   }
+
   .card__title {
     width: 100%;
   }
+
   .image-2, 
   .image-4 {
     transform: scale(1);
@@ -166,8 +169,12 @@
   
   .image-3,
   .image-5 {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     align-self: center;
+  }
+
+  .card .card-img {
+    top: 84px;
   }
 }
 
@@ -175,11 +182,11 @@
   .benefits__container {
     @include mixins.flex-grid(2, 24px, start);
   }
+
   .type-1, 
   .type-2, 
   .type-3 {
     left: 90px;
-    top: 84px;
   }
 }
 
@@ -187,11 +194,11 @@
   .benefits__container {
     @include mixins.flex-grid(2, 20px, start);
   }
+
   .type-1, 
   .type-2, 
   .type-3 {
     left: 56px;
-    top: 84px;
   }
 
   .image-3 {
@@ -210,7 +217,6 @@
     .type-2, 
     .type-3 {
       left: 90px;
-      top: 84px;
     }
   }
 
